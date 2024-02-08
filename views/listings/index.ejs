@@ -1,0 +1,70 @@
+<% layout("/layouts/boilerplate") %>
+    <div class="scrollmenu">
+        <a class="nav-item nav-link " href="#"><i class="fa-solid fa-fire"></i>
+            <p style="font-size: 14px;">Trending</p>
+        </a>
+        <a class="nav-item nav-link " href="#"><i class="fa-solid fa-bed"></i>
+            <p style="font-size: 14px;">Rooms</p>
+        </a>
+        <a class="nav-item nav-link" href="#"><i class="fa-solid fa-mountain-city"></i>
+            <p style="font-size: 14px;">Iconic Cities</p>
+        </a>
+        <a class="nav-item nav-link" href="#"><i class="fa-solid fa-mountain-sun"></i>
+            <p style="font-size: 14px;">Mountains</p>
+        </a>
+        <a class="nav-item nav-link " href="#"><i class="fa-brands fa-fort-awesome"></i>
+            <p style="font-size: 14px;">Castles</p>
+        </a>
+        <a class="nav-item nav-link " href="#"><i class="fa-solid fa-person-swimming"></i>
+            <p style="font-size: 14px;">Amazing Pools</p>
+        </a>
+        <a class="nav-item nav-link " href="#"><i class="fa-solid fa-person-hiking"></i>
+            <p style="font-size: 14px;">Camping</p>
+        </a>
+        <a class="nav-item nav-link " href="#"><i class="fa-solid fa-tractor"></i>
+            <p style="font-size: 14px;">Farms</p>
+        </a>
+        <a class="nav-item nav-link " href="#"><i class="fa-solid fa-snowflake"></i>
+            <p style="font-size: 14px;">Arctic</p>
+        </a>
+        <a class="nav-item nav-link " href="#"><i class="fa-solid fa-key"></i>
+            <p style="font-size: 14px;">New</p>
+        </a>
+        <a class="nav-item nav-link " href="#"><i class="fa-solid fa-umbrella-beach"></i>
+            <p style="font-size: 14px;">Island</p>
+        </a>
+        <a class="nav-item nav-link " href="#"><i class="fa-solid fa-house"></i>
+            <p style="font-size: 14px;">Mansions</p>
+        </a>
+    </div>
+    <div class="tax-toggle mt-3 ms-auto">
+        <div class="form-check-reverse form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+            <label class="form-check-label" for="flexSwitchCheckDefault"><i
+                    class="fa-solid fa-indian-rupee-sign"></i>&nbsp; &nbsp; Display Total After Taxes</label>
+        </div>
+    </div>
+    <!-- <h3>All Listings</h3> -->
+    <!-- <form method="GET" action="/listings/new">
+            <button>Create New Listing</button>
+        </form> -->
+    <div class="row row-cols-1 row-cols-md-3 g-4 mt-2">
+        <% for(let listing of allListings) { %>
+            <a href="/listings/<%= listing._id  %>" class="listing-link">
+                <div class="card col">
+                    <img src="<%= listing.image.url  %>" class="card-img-top" alt="listing_img" style="height: 20rem;">
+                    <div class="card-img-overlay"></div>
+                    <div class="card-body">
+                        <p class="card-text mt-1">
+                            <b>
+                                <%= listing.title %>
+                            </b>
+                            <hr>
+                            &#8377; <%= listing.price.toLocaleString("en-IN") %> / night.
+                                <b class="tax-info"> &nbsp; &nbsp; +18% GST</b>
+                        </p>
+                    </div>
+                </div>
+                <% } %>
+            </a>
+    </div>

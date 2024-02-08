@@ -1,0 +1,62 @@
+<style>
+    /* NavBar serach btn  */
+    .search-btn {
+        background-color: #fe424d;
+        color: #fff;
+        border-radius: 25px;
+        padding: 0 1rem 0 1rem;
+    }
+
+    .search-btn i {
+        display: inline;
+        margin-right: 0.5rem;
+    }
+
+    .search-inp {
+        border-radius: 25px;
+        padding: 0.5rem 3rem 0.5rem 3rem;
+        font-size: 1rem;
+    }
+</style>
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand offset-1" href="/listings"><i class="fa-brands fa-airbnb"></i></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link" href="/listings"><b>Explore</b></a>
+                <hr>
+            </div>
+            <div class="navbar-nav ms-auto">
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2 search-inp" type="search" placeholder="Search destinations">
+                    <button class="btn search-btn" type="submit"><i
+                            class="fa-solid fa-magnifying-glass"></i>Search</button>
+                </form>
+                <hr>
+            </div>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link btn search-btn" href="/listings/new"
+                    style="padding: 0.4rem 2rem 0.4rem 2rem; border: 25px; margin-right: 0.2rem; color: #222222 !important; background-color: #87C4FF !important; font-weight: 500;">AirBnb
+                    your home</a>
+                <hr>
+                <% if(!currentUser) { %>
+                    <a class="nav-link btn search-btn" href="/signup"
+                        style="padding: 0.4rem 2rem 0.4rem 2rem; border: 25px; margin-right: 0.3rem; color: #222222 !important; background-color: #A1EEBD !important;"><b>SignUp</b></a>
+                    <hr>
+                    <a class="nav-link btn search-btn" href="/login"
+                        style="padding: 0.4rem 2rem 0.4rem 2rem; border: 25px; margin-right: 0.3rem;color: #222222 !important; background-color: #A1EEBD !important;"><b>LogIn</b></a>
+                    <hr>
+                    <% } %>
+                        <% if(currentUser) { %>
+                            <a class="nav-link btn search-btn" href="/logout"
+                                style="padding: 0.4rem 2rem 0.4rem 2rem; border: 25px; margin-right: 0.3rem;color: #222222 !important; background-color: #A1EEBD !important;"><b>LogOut</b>
+                            </a>
+                            <% } %>
+                                <hr>
+            </div>
+        </div>
+    </div>
+</nav>
